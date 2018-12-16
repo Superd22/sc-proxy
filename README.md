@@ -5,7 +5,7 @@ This is **very** WIP. Currently only supports TCP and tested in menus
 
 ## What this does so far
 - hits `public.universe.robertsspaceindustries.com` with an A DNS lookup to know which "universe" IP it has to connect to (on launch)
-- creates a Fake DNS server for the game to connect to, redirecting to 127.0.0.1
+- creates a fake DNS server for the game to connect to
 - spools up a proxy between the game client & server
 - display incoming/outgoing tcp as hex
 
