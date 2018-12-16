@@ -1,0 +1,35 @@
+{
+  "name": "reverseproxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:commonjs": "rimraf lib && tsc --target es5 --outDir lib --module commonjs --declaration",
+    "build:es": "rimraf es && tsc --target es6 --outDir es --module es6",
+    "build": "npm run build:commonjs && npm run build:es",
+    "ts": "ts-node src/",
+    "prepublishOnly": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^10.12.15",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "./lib/index.d.ts",
+  "jsnext:main": "./es/index.js",
+  "module": "./es/index.js",
+  "dependencies": {
+    "hostile": "^1.3.2",
+    "proxy-dns": "^1.1.0",
+    "ps-node": "^0.1.6",
+    "typedi": "^0.8.0"
+  }
+}
